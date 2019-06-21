@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Tea cup{% endblock %}
+
+{% block content %}
+
+<div>
+  <img class="float-right w-25" src={{product_id.image}}>
+  <h1>{{product_id.name}}</h1>
+  <p class="lead">{{product_id.description}}.</p>
+  <p>Price: {{product_id.price}}</p>
+  <form action="/add-to-cart">
+    <button class="btn btn-primary">Add To Cart</button>
+    <input type="hidden" name="product_id" value="{{product_id.id}}">
+  </form>
+</div>
+
+{% endblock %}}
