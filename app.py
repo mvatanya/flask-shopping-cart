@@ -25,8 +25,9 @@ def product_detail(product_id):
 @app.route("/cart")
 def show_cart():
     """Show shopping cart."""
-    
-    return render_template("cart.html")
+    product_id = request.form["product_id"]
+    product = Product.get_by_id()
+    return render_template("cart.html", product=product)
 
 @app.route("/add-to-cart")
 def add_to_cart():
